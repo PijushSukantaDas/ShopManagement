@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textview_radius">5</dimen>
+    <dimen name="margin_top">10</dimen>
+    <dimen name="margin_layout">10</dimen>
+</resources>

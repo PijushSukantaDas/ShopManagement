@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/receipt_nav_graph"
+    app:startDestination="@id/receiptFragment">
+
+    <fragment
+        android:id="@+id/receiptFragment"
+        android:name="com.example.shopmanagement.ui.receipt.ReceiptFragment"
+        android:label="ReceiptFragment" >
+        <action
+            android:id="@+id/action_receiptFragment_to_customerReceiptFragment"
+            app:destination="@id/customerReceiptFragment" />
+        <action
+            android:id="@+id/action_receiptFragment_to_receiptDetails"
+            app:destination="@id/receiptDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerReceiptFragment"
+        android:name="com.example.shopmanagement.ui.receipt.CustomerReceiptFragment"
+        android:label="CustomerReceiptFragment" />
+    <fragment
+        android:id="@+id/receiptDetails"
+        android:name="com.example.shopmanagement.ui.receipt.details.ReceiptDetails"
+        android:label="ReceiptDetails" >
+        <action
+            android:id="@+id/action_receiptDetails_to_customerReceiptFragment"
+            app:destination="@id/customerReceiptFragment" />
+    </fragment>
+</navigation>

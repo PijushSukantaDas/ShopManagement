@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/payment_nav_graph"
+    app:startDestination="@id/paymentFragment">
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.shopmanagement.ui.payment.PaymentFragment"
+        android:label="PaymentFragment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_supplierPaymentFragment"
+            app:destination="@id/supplierPaymentFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_paymentDetails"
+            app:destination="@id/paymentDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/supplierPaymentFragment"
+        android:name="com.example.shopmanagement.ui.payment.SupplierPaymentFragment"
+        android:label="SupplierPaymentFragment" />
+    <fragment
+        android:id="@+id/paymentDetails"
+        android:name="com.example.shopmanagement.ui.payment.details.PaymentDetails"
+        android:label="fragment_payment_details"
+        tools:layout="@layout/fragment_payment_details" />
+</navigation>

@@ -1,0 +1,52 @@
+package com.example.shopmanagement.ui.supplier.details
+
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import com.example.shopmanagement.domain.api.ApiUseCase
+import com.example.shopmanagement.ui.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
+
+@HiltViewModel
+class DetailsViewModel @Inject constructor(
+    private val apiUseCase: ApiUseCase
+) : ViewModel() {
+
+
+    fun getSupplierDetails(supplierId : Int) = liveData(Dispatchers.IO){
+        emit(Resource.loading(data = null))
+        try {
+            emit(
+                Resource.success(
+                    data = apiUseCase.getSupplierDetails(supplierId)
+                )
+            )
+        }catch (exception : Exception){
+            emit(Resource.error(data = null,message = exception.toString()))
+        }
+    }
+
+    fun getBalance() = apiUseCase.getSupplierBalance()
+
+    fun getSupplierPayment() = apiUseCase.getSupplierPayment()
+
+    fun getSupplierPurchase() = apiUseCase.getSupplierInvoice()
+
+    fun getSupplierBalanceList() = apiUseCase.getSupplierBalanceList()
+
+    fun searchPurchase(id:Int,fromDate: String, toDate: String) = liveData(Dispatchers.IO){
+        emit(Resource.loading(data = null))
+        try {
+            emit(
+                Resource.success(
+                    data = apiUseCase.searchSupplierPurchase(id,fromDate,toDate)
+                )
+            )
+        }catch (exception : Exception){
+            emit(Resource.error(data = null,message = exception.toString()))
+        }
+    }
+
+}

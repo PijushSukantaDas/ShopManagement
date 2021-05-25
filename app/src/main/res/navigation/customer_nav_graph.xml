@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/customer_nav_graph"
+    app:startDestination="@id/customerList">
+
+    <fragment
+        android:id="@+id/createCustomer"
+        android:name="com.example.shopmanagement.ui.customer.CreateCustomer"
+        android:label="CreateCustomer" />
+    <fragment
+        android:id="@+id/customerDetails"
+        android:name="com.example.shopmanagement.ui.customer.details.CustomerDetails"
+        android:label="CustomerDetails" >
+        <argument
+            android:name="cutomer"
+            app:argType="com.bitspeck.postallylite.data.models.Customer"
+            app:nullable="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/customerList"
+        android:name="com.example.shopmanagement.ui.customer.CustomerList"
+        android:label="CustomerList" >
+        <action
+            android:id="@+id/action_customerList_to_customerDetails"
+            app:destination="@id/customerDetails" />
+        <action
+            android:id="@+id/action_customerList_to_createCustomer"
+            app:destination="@id/createCustomer" />
+    </fragment>
+</navigation>

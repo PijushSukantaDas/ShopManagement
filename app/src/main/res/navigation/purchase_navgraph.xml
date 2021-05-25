@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/purchase_navgraph"
+    app:startDestination="@id/purchaseFragment">
+
+    <fragment
+        android:id="@+id/purchaseFragment"
+        android:name="com.example.shopmanagement.ui.purchase.list.PurchaseFragment"
+        android:label="PurchaseFragment">
+        <action
+            android:id="@+id/action_purchaseFragment_to_supplierSelectFragment"
+            app:destination="@id/supplierSelectFragment" />
+        <action
+            android:id="@+id/action_purchaseFragment_to_purchaseDetailsFragment"
+            app:destination="@id/purchaseDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productSelectFragment"
+        android:name="com.example.shopmanagement.ui.purchase.product.ProductSelectFragment"
+        android:label="fragment_product_select"
+        tools:layout="@layout/fragment_product_select">
+        <action
+            android:id="@+id/action_productSelectFragment_to_purchaseConfirmFragment"
+            app:destination="@id/purchaseConfirmFragment" />
+        <action
+            android:id="@+id/action_productSelectFragment_to_supplierSelectFragment"
+            app:destination="@id/supplierSelectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/supplierSelectFragment"
+        android:name="com.example.shopmanagement.ui.purchase.supplier.SupplierSelectFragment"
+        android:label="fragment_supplier_select"
+        tools:layout="@layout/fragment_supplier_select">
+        <action
+            android:id="@+id/action_supplierSelectFragment_to_productSelectFragment"
+            app:destination="@id/productSelectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/purchaseConfirmFragment"
+        android:name="com.example.shopmanagement.ui.purchase.confirm.PurchaseConfirmFragment"
+        android:label="fragment_purchase_confirm"
+        tools:layout="@layout/fragment_purchase_confirm">
+        <action
+            android:id="@+id/action_purchaseConfirmFragment_to_productSelectFragment"
+            app:destination="@id/productSelectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/purchaseDetailsFragment"
+        android:name="com.example.shopmanagement.ui.purchase.details.PurchaseDetailsFragment"
+        android:label="fragment_purchase_details"
+        tools:layout="@layout/fragment_purchase_details">
+        <argument
+            android:name="purchaseId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>

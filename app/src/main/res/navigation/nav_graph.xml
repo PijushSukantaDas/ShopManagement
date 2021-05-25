@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/licenseFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.shopmanagement.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_purchaseActivity"
+            app:destination="@id/purchaseActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_salesActivity"
+            app:destination="@id/salesActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_receiptActivity"
+            app:destination="@id/receiptActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_paymentActivity"
+            app:destination="@id/paymentActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_productActivity"
+            app:destination="@id/productActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_customerActivity"
+            app:destination="@id/customerActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_supplierActivity"
+            app:destination="@id/supplierActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/salesActivity"
+        android:name="com.example.shopmanagement.ui.activity.SalesActivity"
+        android:label="SalesActivity" />
+    <activity
+        android:id="@+id/purchaseActivity"
+        android:name="com.example.shopmanagement.ui.activity.PurchaseActivity"
+        android:label="activity_purchase"
+        tools:layout="@layout/activity_purchase" />
+    <activity
+        android:id="@+id/receiptActivity"
+        android:name="com.example.shopmanagement.ui.activity.ReceiptActivity"
+        android:label="ReceiptActivity" />
+    <activity
+        android:id="@+id/paymentActivity"
+        android:name="com.example.shopmanagement.ui.activity.PaymentActivity"
+        android:label="activity_peyment"
+        tools:layout="@layout/activity_peyment" />
+    <activity
+        android:id="@+id/productActivity"
+        android:name="com.example.shopmanagement.ui.activity.ProductActivity"
+        android:label="activity_product"
+        tools:layout="@layout/activity_product" />
+    <activity
+        android:id="@+id/customerActivity"
+        android:name="com.example.shopmanagement.ui.activity.CustomerActivity"
+        android:label="CustomerActivity" />
+    <activity
+        android:id="@+id/supplierActivity"
+        android:name="com.example.shopmanagement.ui.activity.SupplierActivity"
+        android:label="SupplierActivity" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.shopmanagement.ui.authentication.AuthFragment"
+        android:label="AuthFragment" >
+        <action
+            android:id="@+id/action_authFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/licenseFragment"
+        android:name="com.example.shopmanagement.ui.authentication.LicenseFragment"
+        android:label="LicenseFragment" >
+        <action
+            android:id="@+id/action_licenseFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_licenseFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.example.shopmanagement.ui.authentication.OtpFragment"
+        android:label="OtpFragment" >
+        <action
+            android:id="@+id/action_otpFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/action_otpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_otpFragment_to_licenseFragment"
+            app:destination="@id/licenseFragment" />
+    </fragment>
+
+</navigation>

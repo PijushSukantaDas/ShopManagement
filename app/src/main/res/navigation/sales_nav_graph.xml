@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sales_nav_graph"
+    app:startDestination="@id/dailySalesFragment">
+
+    <fragment
+        android:id="@+id/dailySalesFragment"
+        android:name="com.example.shopmanagement.ui.sales.dailysales.DailySalesFragment"
+        android:label="DailySalesFragment">
+        <action
+            android:id="@+id/action_dailySalesFragment_to_selectCustomerFragment"
+            app:destination="@id/selectCustomerFragment" />
+        <action
+            android:id="@+id/action_dailySalesFragment_to_invoiceDetailsFragment"
+            app:destination="@id/invoiceDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectCustomerFragment"
+        android:name="com.example.shopmanagement.ui.sales.customer.SelectCustomerFragment"
+        android:label="SelectCustomerFragment">
+        <action
+            android:id="@+id/action_selectCustomerFragment_to_dailySalesFragment"
+            app:destination="@id/dailySalesFragment" />
+        <action
+            android:id="@+id/action_selectCustomerFragment_to_productSelectionFragment"
+            app:destination="@id/productSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productSelectionFragment"
+        android:name="com.example.shopmanagement.ui.sales.product.ProductSelectionFragment"
+        android:label="ProductSelectionFragment">
+        <action
+            android:id="@+id/action_productSelectionFragment_to_selectCustomerFragment"
+            app:destination="@id/selectCustomerFragment" />
+        <action
+            android:id="@+id/action_productSelectionFragment_to_customerBillFragment"
+            app:destination="@id/customerBillFragment" />
+        <action
+            android:id="@+id/action_productSelectionFragment_to_invoiceDetailsFragment"
+            app:destination="@id/invoiceDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerBillFragment"
+        android:name="com.example.shopmanagement.ui.sales.payment.CustomerBillFragment"
+        android:label="CustomerBillFragment">
+        <action
+            android:id="@+id/action_customerBillFragment_to_productSelectionFragment"
+            app:destination="@id/productSelectionFragment" />
+        <action
+            android:id="@+id/action_customerBillFragment_to_dailySalesFragment"
+            app:destination="@id/dailySalesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/invoiceDetailsFragment"
+        android:name="com.example.shopmanagement.ui.sales.details.InvoiceDetailsFragment"
+        android:label="InvoiceDetailsFragment">
+        <argument
+            android:name="invoiceId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_invoiceDetailsFragment_to_productSelectionFragment"
+            app:destination="@id/productSelectionFragment" />
+    </fragment>
+
+</navigation>

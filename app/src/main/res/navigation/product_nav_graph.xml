@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/product_nav_graph"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.shopmanagement.ui.product.ProductListFragment"
+        android:label="ProductListFragment" >
+        <action
+            android:id="@+id/action_productListFragment_to_productDetails"
+            app:destination="@id/productDetails" />
+        <action
+            android:id="@+id/action_productListFragment_to_createProductFragment"
+            app:destination="@id/createProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProductFragment"
+        android:name="com.example.shopmanagement.ui.product.CreateProductFragment"
+        android:label="CreateProductFragment" />
+    <fragment
+        android:id="@+id/productDetails"
+        android:name="com.example.shopmanagement.ui.product.details.ProductDetails"
+        android:label="ProductDetails" >
+        <argument
+            android:name="product"
+            app:argType="com.bitspeck.postallylite.data.models.Product"
+            app:nullable="true"/>
+
+    </fragment>
+</navigation>

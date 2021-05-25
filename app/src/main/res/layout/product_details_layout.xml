@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="product"
+            type="com.example.shopmanagement.data.models.api.product.details.Re" />
+    </data>
+
+    <LinearLayout
+        android:layout_marginTop="2dp"
+        android:id="@+id/productSalesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="5">
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:id="@+id/date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@{product.date}"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_shadow_start_color"/>
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:id="@+id/customerOrSupplierName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    />
+                <TextView
+                    android:text="@{product.status}"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:id="@+id/statusType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:id="@+id/idNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_shadow_start_color"/>
+
+            <TextView
+                android:text="@{String.valueOf(product.quantity)}"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="2dp"
+                android:id="@+id/quantity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_shadow_start_color"/>
+            <TextView
+                android:text="@{String.valueOf(product.total_amount)}"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="2dp"
+                android:id="@+id/total"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/cardview_shadow_start_color"/>
+    </LinearLayout>
+</layout>

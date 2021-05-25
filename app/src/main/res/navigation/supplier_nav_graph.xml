@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/supplier_nav_graph"
+    app:startDestination="@id/supplierList">
+
+    <fragment
+        android:id="@+id/createSupplier"
+        android:name="com.example.shopmanagement.ui.supplier.CreateSupplier"
+        android:label="CreateSupplier" />
+    <fragment
+        android:id="@+id/supplierDetails"
+        android:name="com.example.shopmanagement.ui.supplier.details.SupplierDetails"
+        android:label="SupplierDetails">
+
+        <argument
+            android:name="supplier"
+            app:argType="com.bitspeck.postallylite.data.models.Supplier"
+            app:nullable="true"/>
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/supplierList"
+        android:name="com.example.shopmanagement.ui.supplier.SupplierList"
+        android:label="SupplierList" >
+        <action
+            android:id="@+id/action_supplierList_to_createSupplier"
+            app:destination="@id/createSupplier" />
+        <action
+            android:id="@+id/action_supplierList_to_supplierDetails"
+            app:destination="@id/supplierDetails" />
+    </fragment>
+</navigation>
